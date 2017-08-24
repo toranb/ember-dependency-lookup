@@ -7,6 +7,9 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('smoke');
+  this.route('other');
+  this.route('finally');
 });
 
 export default Router;

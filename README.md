@@ -1,26 +1,37 @@
 # ember-dependency-lookup
 
-This README outlines the details of collaborating on this Ember addon.
+[![Travis][ci-img]][ci-url] [![NPM][npm-img]][npm-url] ![Ember][ember-img]
+
+## When is this useful?
+
+When you are using pure functions but need to lookup something in the ember container
+
 
 ## Installation
 
-* `git clone <repository-url>` this repository
-* `cd ember-dependency-lookup`
-* `npm install`
+```bash
+ember install ember-dependency-lookup
+```
 
-## Running
+## Usage
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+```js
+//app/middleware/index.js
+import { put, takeEvery } from 'redux-saga/effects';
+import { lookup } from 'ember-dependency-lookup';
 
-## Running Tests
+function* transitionAsync() {
+  yield put({type: 'TRANSITION_START'});
+  lookup('service:-routing').transitionTo('index');
+}
 
-* `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
+export function* transition() {
+  yield takeEvery('TRANSITION', transitionAsync);
+}
+```
 
-## Building
-
-* `ember build`
-
-For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
+[ci-img]: https://img.shields.io/travis/toranb/ember-dependency-lookup.svg "Travis CI Build Status"
+[ci-url]: https://travis-ci.org/toranb/ember-dependency-lookup
+[ember-img]: https://img.shields.io/badge/ember-2.12+-green.svg "Ember 2.12+"
+[npm-img]: https://img.shields.io/npm/v/ember-dependency-lookup.svg "NPM Version"
+[npm-url]: https://www.npmjs.com/package/ember-dependency-lookup
