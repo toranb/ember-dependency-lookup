@@ -16,7 +16,7 @@ ember install ember-dependency-lookup
 ## Usage
 
 ```js
-//app/middleware/index.js
+//app/sagas/transition.js
 import { put, takeEvery } from 'redux-saga/effects';
 import { lookup } from 'ember-dependency-lookup';
 
