@@ -1,24 +1,27 @@
 {
   "name": "ember-dependency-lookup",
-  "version": "0.0.1",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "1.0.0",
+  "description": "Provides a simple container lookup function for non ember aware contexts",
   "keywords": [
     "ember-addon"
   ],
+  "author": "Toran Billups toranb@gmail.com",
   "license": "MIT",
-  "author": "",
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/toranb/ember-dependency-lookup"
+  },
   "scripts": {
     "build": "ember build",
     "start": "ember server",
     "test": "ember try:each"
   },
   "dependencies": {
-    "ember-cli-babel": "^6.3.0"
+    "ember-cli-babel": "^6.8.1"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
