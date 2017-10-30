@@ -9,6 +9,7 @@ const Router = EmberRouter.extend({
 Router.map(function() {
   this.route('smoke');
   this.route('other');
+  this.route('rando');
   this.route('finally');
 });
 
