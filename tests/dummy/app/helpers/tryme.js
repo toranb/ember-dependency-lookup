@@ -1,9 +1,10 @@
-import Ember from 'ember';
+import { later } from '@ember/runloop';
+import Helper from '@ember/component/helper';
 import { lookup } from 'ember-dependency-lookup';
 
-export default Ember.Helper.helper(function() {
-  Ember.run.later(() => {
-    lookup('service:-routing').transitionTo('finally');
+export default Helper.helper(function() {
+  later(() => {
+    lookup('service:router').transitionTo('finally');
   }, 300);
   return 'helper loaded ...';
 });
