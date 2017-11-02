@@ -5,9 +5,7 @@ const { getOwner, setOwner } = Ember;
 const DependencyLookup = Ember.Service.extend({
 }).reopenClass({
   setOwner(owner) {
-    if (!getOwner(this)) {
-      setOwner(this, owner);
-    }
+    setOwner(this, owner);
   },
   getOwner() {
     if (!getOwner(this)) {
