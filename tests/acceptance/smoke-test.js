@@ -1,16 +1,15 @@
-import { test } from 'qunit';
-import moduleForAcceptance from '../../tests/helpers/module-for-acceptance';
+import { click, currentURL, visit } from '@ember/test-helpers';
+import { module, test } from 'qunit';
+import { setupApplicationTest } from 'ember-qunit';
 
-moduleForAcceptance('Acceptance Test');
+module('Acceptance Test', function(hooks) {
+  setupApplicationTest(hooks);
 
-test('should allow for function like lookups', function(assert) {
-  visit('/smoke');
-  andThen(function() {
-    assert.equal(currentURL(), '/smoke');
-  });
-  click('a:eq(1)');
-  andThen(function() {
-    assert.equal(find('.helper').text().trim(), 'helper loaded ...');
+  test('should allow for function like lookups', async function(assert) {
+    await visit('/');
+    assert.equal(currentURL(), '/');
+    await click('a.finally');
     assert.equal(currentURL(), '/finally');
+    assert.dom('.helper').hasText('helper loaded ...');
   });
 });

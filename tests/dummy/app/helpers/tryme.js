@@ -4,7 +4,7 @@ import { lookup } from 'ember-dependency-lookup';
 
 export default Helper.helper(function() {
   later(() => {
-    lookup('service:-routing').transitionTo('finally');
+    lookup('service:-routing').transitionTo('finally', []);
   }, 300);
   return 'helper loaded ...';
 });

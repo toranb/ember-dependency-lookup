@@ -22,7 +22,7 @@ import { lookup } from 'ember-dependency-lookup';
 
 function* transitionAsync() {
   yield put({type: 'TRANSITION_START'});
-  lookup('service:-routing').transitionTo('index');
+  lookup('service:-routing').transitionTo('index', []);
 }
 
 export function* transition() {
