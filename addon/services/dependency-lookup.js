@@ -1,8 +1,7 @@
-import Ember from 'ember';
+import { getOwner, setOwner } from '@ember/application';
+import Service from '@ember/service';
 
-const { getOwner, setOwner } = Ember;
-
-const DependencyLookup = Ember.Service.extend({
+const DependencyLookup = Service.extend({
 }).reopenClass({
   setOwner(owner) {
     setOwner(this, owner);

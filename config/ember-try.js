@@ -1,82 +1,48 @@
 /* eslint-env node */
 module.exports = {
+  useYarn: true,
+
+  command: "ember test -e=production",
+
   scenarios: [
     {
-      name: 'ember-lts-2.8',
-      bower: {
-        dependencies: {
-          'ember': 'components/ember#lts-2-8'
-        },
-        resolutions: {
-          'ember': 'lts-2-8'
-        }
-      },
+      name: 'ember-3.4.X',
       npm: {
         devDependencies: {
-          'ember-source': null
+          'ember-source': '~3.4.0'
         }
       }
     },
     {
-      name: 'ember-lts-2.12',
+      name: 'ember-3.5.X',
       npm: {
         devDependencies: {
-          'ember-source': '~2.12.0'
+          'ember-source': '~3.5.0'
         }
       }
     },
     {
-      name: 'ember-release',
-      bower: {
-        dependencies: {
-          'ember': 'components/ember#release'
-        },
-        resolutions: {
-          'ember': 'release'
-        }
-      },
+      name: 'ember-3.6.X',
       npm: {
         devDependencies: {
-          'ember-source': null
+          'ember-source': '~3.6.0'
         }
       }
     },
     {
-      name: 'ember-beta',
-      bower: {
-        dependencies: {
-          'ember': 'components/ember#beta'
-        },
-        resolutions: {
-          'ember': 'beta'
-        }
-      },
+      name: 'ember-3.8.X',
       npm: {
         devDependencies: {
-          'ember-source': null
+          'ember-source': '~3.8.0'
         }
       }
     },
     {
-      name: 'ember-canary',
-      bower: {
-        dependencies: {
-          'ember': 'components/ember#canary'
-        },
-        resolutions: {
-          'ember': 'canary'
-        }
-      },
+      name: 'ember-3.11.X',
       npm: {
         devDependencies: {
-          'ember-source': null
+          'ember-source': '~3.11.1'
         }
-      }
-    },
-    {
-      name: 'ember-default',
-      npm: {
-        devDependencies: {}
       }
     }
   ]
