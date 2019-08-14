@@ -1,6 +1,6 @@
 {
   "name": "ember-dependency-lookup",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Provides a simple container lookup function for non ember aware contexts",
   "keywords": [
     "ember-addon"
